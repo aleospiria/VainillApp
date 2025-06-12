@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ImagenesVainilla"
+        tools:targetApi="31">
+        <!-- Declarar el BroadcastReceiver -->
+        <receiver android:name=".NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.imagenesvainilla.NOTIFICATION" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".Pantalla_lista_formularios"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_formulario"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_foto_completa"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_historial"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_lista_notas"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_bloc_notas"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_configuracion"
+            android:exported="false"
+            android:label="@string/title_activity_pantalla_configuracion" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_inicioSe"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_inicioApp"
+            android:exported="true"
+            android:label="VainillApp"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Pantalla_camara"
+            android:exported="false" />
+    </application>
+
+</manifest>

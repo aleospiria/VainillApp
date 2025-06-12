@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pantalla_bloc_notas"
+    android:padding="16dp">
+
+    <!-- Imagen seleccionada -->
+    <ImageView
+        android:id="@+id/imageViewFoto"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón seleccionar foto -->
+    <Button
+        android:id="@+id/buttonSeleccionarFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Foto"
+        app:layout_constraintTop_toBottomOf="@id/imageViewFoto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Campo de nota -->
+    <EditText
+        android:id="@+id/editTextNota"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:hint="Escribe tu nota..."
+        android:gravity="top"
+        android:background="@android:drawable/edit_text"
+        android:minHeight="150dp"
+        app:layout_constraintTop_toBottomOf="@id/buttonSeleccionarFoto"
+        app:layout_constraintBottom_toTopOf="@+id/linearBotones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="12dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <!-- Contenedor horizontal para los botones de abajo -->
+    <LinearLayout
+        android:id="@+id/linearBotones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/buttonGuardarNota"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Guardar Nota"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/buttonMicrofono"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="🎙️"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"/>
+
+        <Button
+            android:id="@+id/buttonVerNotas"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Ver Notas Guardadas"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

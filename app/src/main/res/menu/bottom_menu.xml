@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Botón de cámara -->
+    <item
+        android:id="@+id/menu_camera"
+        android:icon="@drawable/ic_camera"
+        android:title="Cámara"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+
+    <!-- Botón de galería -->
+    <item
+        android:id="@+id/menu_gallery"
+        android:icon="@drawable/ic_gallery"
+        android:title="Galería"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom" />
+</menu>

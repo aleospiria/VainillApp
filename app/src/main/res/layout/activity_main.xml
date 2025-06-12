@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:padding="16dp">
+
+    <!-- Notificaciones (encima del CardView) -->
+    <ImageView
+        android:id="@+id/notificationIcon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_notifications"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Notificaciones"/>
+
+    <!-- Botón de configuración (encima del CardView) -->
+    <ImageView
+        android:id="@+id/settingsBtn"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_settings"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="Configuración"/>
+
+    <!-- Resumen de alertas o estado general -->
+    <TextView
+        android:id="@+id/alertSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settingsBtn"
+        android:text="Alertas: "
+        android:textSize="16sp"
+        android:textColor="#FF0000"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="#FFF3F3"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Vista previa de formularios -->
+    <TextView
+        android:id="@+id/textViewFormulariosPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alertSummary"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:text="No hay formularios guardados"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="#F5F5F5"
+        android:minHeight="100dp"/>
+
+    <!-- Contenedor para los botones de formulario -->
+    <LinearLayout
+        android:id="@+id/linearBotonesFormularios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/textViewFormulariosPreview"
+        android:layout_marginTop="16dp"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/buttonLlenarInfo"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Llenar info"
+            android:layout_marginEnd="8dp"
+            android:padding="12dp"/>
+
+        <Button
+            android:id="@+id/buttonListaFormularios"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Ver formularios"
+            android:layout_marginStart="8dp"
+            android:padding="12dp"/>
+
+    </LinearLayout>
+
+    <!-- Accesos rápidos (Vacio por el momento) -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_below="@id/linearBotonesFormularios"
+        android:layout_marginTop="16dp">
+    </GridLayout>
+
+    <!-- Menú inferior de navegación -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground">
+
+        <ImageView
+            android:id="@+id/btnCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_camera"
+            android:contentDescription="Ir a cámara" />
+
+        <ImageView
+            android:id="@+id/manualInputBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_edit"
+            android:contentDescription="Ingreso manual de datos" />
+
+        <ImageView
+            android:id="@+id/btnHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_history"
+            android:contentDescription="Ver historial"/>
+    </LinearLayout>
+
+</RelativeLayout>
